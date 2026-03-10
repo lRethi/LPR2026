@@ -1,13 +1,15 @@
 #include <iostream>
 #include <windows.h>
 #include <iomanip>
+#include <locale>
 using namespace std;
 float raioCirculo, areaCirculo;
 int numA, numB, numC, numD, produtoAB, produtoCD, difABxCD;
 
 int main()
 {
-    SetConsoleOutputCP(65001); // arruma o output no console pra aceitar utf-8
+    SetConsoleOutputCP(65001); // permite que o terminal mostre caracteres utf-8 corretamente
+    setlocale(LC_ALL, "pt_BR.utf8"); // permite usar acentuação e interpretar caracteres utf-8
     cout << "Digite os 4 primeiros números inteiros que serão usados:" << endl;
     cin >> numA >> numB >> numC >> numD;
     produtoAB = numA * numB; // multiplica A por B
